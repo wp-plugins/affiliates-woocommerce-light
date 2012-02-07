@@ -23,7 +23,7 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: Karim "Kento" Rahimpur
  * Author URI: http://www.itthinx.com/
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 
@@ -247,7 +247,13 @@ class Affiliates_WooCommerce_Light_Integration {
      */
     public static function woocommerce_checkout_order_processed( $order_id ) {
 
-        $order_subtotal = get_post_meta( $order_id, '_order_subtotal', true );
+        $order_total        = get_post_meta( $order_id, '_order_total', true );
+        $order_tax          = get_post_meta( $order_id, '_order_tax', true );
+        $order_shipping     = get_post_meta( $order_id, '_order_shipping', true );
+        $order_shipping_tax = get_post_meta( $order_id, '_order_shipping_tax', true );
+
+        $order_subtotal = $order_total - $order_tax - $order_shipping - $order_shipping_tax;
+
         $currency       = get_option( 'woocommerce_currency' );
 
         $order_link = '<a href="' . admin_url( 'post.php?post=' . $order_id . '&action=edit' ) . '">';
