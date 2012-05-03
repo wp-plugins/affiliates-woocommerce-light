@@ -3,7 +3,7 @@ Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/affiliates-woocommerce-light
 Tags: ads, advertising, affiliate, affiliate marketing, affiliate plugin, affiliate tool, affiliates, bucks, contact form, crm, earn money, e-commerce, e-commerce, integration, lead, link, marketing, money, online sale, order, partner, referral, referral links, referrer, shopping cart, sales, shop, shopping cart, site, track, transaction, WooCommerce, wordpress
 Requires at least: 3.0
-Tested up to: 3.3.1
+Tested up to: 3.3.2
 Stable tag: 1.0.1
 
 This plugin integrates Affiliates with WooCommerce.
@@ -66,6 +66,11 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed links to orders on _Visits & Referrals_ and _Affiliates & Referrals_ admin screens
+* Added usage stats option
+* Reduced footprint on affiliates admin pages 
+
 = 1.0.1 =
 * Referral amount calculation adjusted to missing subtotal (WooCommerce > 1.3.2.1)
 
@@ -73,6 +78,10 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+* Fixed links to orders on _Visits & Referrals_ and _Affiliates & Referrals_ admin screens
+* Reduced admin page footprint + usage stats option 
 
 = 1.0.1 =
 * Must update if using WooCommerce >= 1.4 - referral amount calculation adjusted to missing subtotal
