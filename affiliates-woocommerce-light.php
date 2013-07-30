@@ -2,7 +2,7 @@
 /**
  * affiliates-woocommerce-light.php
  * 
- * Copyright (c) 2012 "kento" Karim Rahimpur www.itthinx.com
+ * Copyright (c) 2012-2013 "kento" Karim Rahimpur www.itthinx.com
  * 
  * This code is released under the GNU General Public License.
  * See COPYRIGHT.txt and LICENSE.txt.
@@ -23,7 +23,7 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: itthinx
  * Author URI: http://www.itthinx.com/
- * Version: 1.0.4
+ * Version: 1.0.5
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 
@@ -238,8 +238,11 @@ class Affiliates_WooCommerce_Light_Integration {
 			// right admin page
 			isset( $_REQUEST['page'] ) && in_array( $_REQUEST['page'], self::$shop_order_link_modify_pages ) &&
 			// check link 
-			( preg_match( "/" . self::SHOP_ORDER_POST_TYPE . "=([^&]*)/", $post_link, $matches ) === 1 ) &&
-			isset( $matches[1] ) && ( $matches[1] === $post->post_name )
+			(
+				( preg_match( "/" . self::SHOP_ORDER_POST_TYPE . "=([^&]*)/", $post_link, $matches ) === 1 ) && isset( $matches[1] ) && ( $matches[1] === $post->post_name )
+				||
+				( strpos( $post_link, 'post_type=' . self::SHOP_ORDER_POST_TYPE ) !== false ) && ( preg_match( '/p=([0-9]+)/', $post_link, $matches ) === 1 ) && isset( $matches[1] ) && ( $matches[1] == $post->ID )
+			)
 		) {
 			$link = admin_url( 'post.php?post=' . $post->ID . '&action=edit' );
 		}
