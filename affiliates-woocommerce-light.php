@@ -23,7 +23,7 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: itthinx
  * Author URI: http://www.itthinx.com/
- * Version: 1.0.5
+ * Version: 1.0.6
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 

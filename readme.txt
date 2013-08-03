@@ -3,7 +3,7 @@ Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/affiliates-woocommerce-light
 Tags: ads, advertising, affiliate, affiliate marketing, affiliate plugin, affiliate tool, affiliates, bucks, contact form, crm, earn money, e-commerce, e-commerce, integration, lead, link, marketing, money, online sale, order, partner, referral, referral links, referrer, shopping cart, sales, shop, shopping cart, site, track, transaction, WooCommerce, wordpress
 Requires at least: 3.0
-Tested up to: 3.5.2
+Tested up to: 3.6
 Stable tag: 1.0.5
 
 This plugin integrates Affiliates with WooCommerce.
@@ -33,7 +33,7 @@ If you need help, have problems, want to leave feedback or want to provide const
 
 Please try to solve problems there before you rate this plugin or say it doesn't work. There goes a _lot_ of work into providing you with free quality plugins! Please appreciate that and help with your feedback. Thanks!
 
-You are welcome to [follow me on Twitter](http://twitter.com/itthinx) for updates on this and related plugins.
+You are welcome to [follow itthinx](http://twitter.com/itthinx) on Twitter for updates on this and related plugins.
 
 == Installation ==
 
@@ -66,8 +66,10 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 
 == Changelog ==
 
-= 1.0.5
+= 1.0.6 =
+* WP 3.6 compatibility tested
 
+= 1.0.5 =
 * Fixed links to orders with ugly permalink settings
 
 = 1.0.4 =
@@ -88,6 +90,12 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.6 =
+* WordPress 3.6 compatible
+
+= 1.0.5 =
+* Fixed order links
 
 = 1.0.4 =
 * WordPress 3.5 compatible
