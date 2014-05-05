@@ -23,7 +23,7 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: itthinx
  * Author URI: http://www.itthinx.com/
- * Version: 1.0.8
+ * Version: 1.0.9
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 
@@ -159,7 +159,7 @@ class Affiliates_WooCommerce_Light_Integration {
 			'</div>';
 
 		$output .= '<p class="manage" style="padding:1em;margin-right:1em;font-weight:bold;font-size:1em;line-height:1.62em">';
-		$output .= __( 'You can support the development of the Affiliates plugin and get additional features with <em style="color:#a46497;">Affiliates WooCommerce Integration Pack</em> available on <a href="http://www.itthinx.com/plugins/affiliates-woocommerce/" target="_blank">itthinx.com</a> or <a href="http://www.woothemes.com/extensions/third-party/" target="_blank">woothemes.com</a>.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN );
+		$output .= __( 'You can support the development of the Affiliates plugin and get additional features with <a href="http://www.itthinx.com/plugins/affiliates-pro/" target="_blank">Affiliates Pro</a> and <a href="http://www.itthinx.com/plugins/affiliates-enterprise/" target="_blank">Affiliates Enterprise</a>.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN );
 		$output .= '</p>';
 
 		$output .= '<div class="manage" style="padding:2em;margin-right:1em;">';
@@ -213,8 +213,6 @@ class Affiliates_WooCommerce_Light_Integration {
 			'<p>' .
 			( $usage_stats ? "<img src='http://www.itthinx.com/img/affiliates-woocommerce/affiliates-woocommerce-light.png' alt='Logo'/>" : '' ) .
 			__( "Powered by <a href='http://www.itthinx.com/plugins/affiliates-woocommerce-light' target='_blank'>Affiliates WooCommerce Integration Light</a>.", AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) .
-			' ' .
-			__( 'Get additional features with <a href="http://www.itthinx.com/plugins/affiliates-woocommerce/" target="_blank">Affiliates Pro for WooCommerce</a>.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) .
 			'</p>' .
 			'</div>' .
 			$footer;

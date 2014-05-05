@@ -67,6 +67,9 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 
 == Changelog ==
 
+= 1.0.9 =
+* Settings page cleaned up, reduced note footprint.
+
 = 1.0.8 =
 * WordPress 3.9 compatibility checked.
 
@@ -97,6 +100,9 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.9 =
+* Settings page reviewed.
 
 = 1.0.8 =
 * WordPress 3.9 compatibility checked.
