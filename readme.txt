@@ -4,28 +4,26 @@ Donate link: http://www.itthinx.com/plugins/affiliates-woocommerce-light
 Tags: ads, advertising, affiliate, affiliate marketing, affiliate plugin, affiliate tool, affiliates, bucks, contact form, crm, earn money, e-commerce, e-commerce, integration, lead, link, marketing, money, online sale, order, partner, referral, referral links, referrer, shopping cart, sales, shop, shopping cart, site, track, transaction, WooCommerce, wordpress
 Requires at least: 3.5.1
 Tested up to: 3.9
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv3
 
 This plugin integrates Affiliates with WooCommerce.
 
 == Description ==
 
-This plugin integrates [Affiliates](http://www.itthinx.com/plugins/affiliates/) with [WooCommerce](http://www.woothemes.com/woocommerce/).
-
-*WooCommerce* delivers enterprise-level quality and features to your online store.
-
-*Affiliates* is an outstanding platform that helps to boost sales through your affiliate program.
+This plugin integrates [Affiliates](http://www.itthinx.com/plugins/affiliates/) with [WooCommerce](http://wordpress.org/plugins/woocommerce/).
 
 With this integration plugin, referrals are created automatically for your affiliates when sales are made.
 
 The plugin allows you to set a referral (commission) rate so that your affiliates get credited with a referral based on a percentage of each sale's total net amount.
 
-What you need to use this is all free and ready to go:
+*Affiliates* is an outstanding platform that helps to boost sales through your affiliate program and is the ideal affiliate solution for *WooCommerce*.
 
-- [WooCommerce](http://wordpress.org/extend/plugins/woocommerce)
+Requirements:
+
 - [Affiliates](http://wordpress.org/extend/plugins/affiliates)
 - [Affiliates WooCommerce Integration Light](http://wordpress.org/extend/plugins/affiliates-woocommerce-light) (this plugin)
+- [WooCommerce](http://wordpress.org/extend/plugins/woocommerce)
 
 Install these, set up your shop, decide how much you want to pay your affiliates and start selling!
 
