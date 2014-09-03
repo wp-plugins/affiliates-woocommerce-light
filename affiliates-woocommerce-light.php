@@ -23,7 +23,7 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: itthinx
  * Author URI: http://www.itthinx.com/
- * Version: 1.0.9
+ * Version: 1.0.10
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 
@@ -189,7 +189,7 @@ class Affiliates_WooCommerce_Light_Integration {
 
 		$output .= '<p>';
 		$output .= wp_nonce_field( self::SET_ADMIN_OPTIONS, self::NONCE, true, false );
-		$output .= '<input type="submit" name="submit" value="' . __( 'Save', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) . '"/>';
+		$output .= '<input class="button-primary" type="submit" name="submit" value="' . __( 'Save', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) . '"/>';
 		$output .= '</p>';
 
 		$output .= '</div>';
