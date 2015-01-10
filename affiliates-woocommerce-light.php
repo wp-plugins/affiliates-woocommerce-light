@@ -2,7 +2,7 @@
 /**
  * affiliates-woocommerce-light.php
  * 
- * Copyright (c) 2012-2013 "kento" Karim Rahimpur www.itthinx.com
+ * Copyright (c) 2012-2015 "kento" Karim Rahimpur www.itthinx.com
  * 
  * This code is released under the GNU General Public License.
  * See COPYRIGHT.txt and LICENSE.txt.
@@ -23,7 +23,7 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: itthinx
  * Author URI: http://www.itthinx.com/
- * Version: 1.0.10
+ * Version: 1.0.11
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 
