@@ -23,7 +23,7 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: itthinx
  * Author URI: http://www.itthinx.com/
- * Version: 1.0.11
+ * Version: 1.0.12
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 
@@ -106,7 +106,23 @@ class Affiliates_WooCommerce_Light_Integration {
 			add_filter( 'post_type_link', array( __CLASS__, 'post_type_link' ), 10, 4 );
 			add_action( 'affiliates_admin_menu', array( __CLASS__, 'affiliates_admin_menu' ) );
 			add_filter( 'affiliates_footer', array( __CLASS__, 'affiliates_footer' ) );
+			add_filter( 'affiliates_setup_buttons', array( __CLASS__, 'affiliates_setup_buttons' ) );
 		}
+	}
+
+	/**
+	 * Add a setup hint button.
+	 *
+	 * @param array $buttons
+	 * @return array
+	 */
+	public static function affiliates_setup_buttons( $buttons ) {
+		$buttons['affiliates-woocommerce-light'] = sprintf (
+			'<a href="%s" class="button-primary">%s</a>',
+			add_query_arg( 'section', 'affiliates-woocommerce-light', admin_url( 'admin.php?page=affiliates-admin-woocommerce-light' ) ),
+			__( 'Set the Commission Rate', AFFILIATES_PLUGIN_DOMAIN )
+		);
+		return $buttons;
 	}
 
 	/**

@@ -65,6 +65,9 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 
 == Changelog ==
 
+= 1.0.12 =
+* Added a setup hint button to set the commission rate.
+
 = 1.0.11 =
 * WordPress 4.1 compatibility checked.
 
@@ -105,6 +108,9 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.12 =
+* Added a setup hint button to set the commission rate.
 
 = 1.0.11 =
 * WordPress 4.1 and WooCommerce 2.2.10 compatibility checked.
