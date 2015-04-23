@@ -23,10 +23,13 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: itthinx
  * Author URI: http://www.itthinx.com/
- * Version: 1.0.12
+ * Version: 1.1.0
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 
+/**
+ * Light integration for WooCommerce.
+ */
 class Affiliates_WooCommerce_Light_Integration {
 
 	const SHOP_ORDER_POST_TYPE = 'shop_order';
@@ -84,10 +87,10 @@ class Affiliates_WooCommerce_Light_Integration {
 		$woocommerce_is_active = in_array( 'woocommerce/woocommerce.php', $active_plugins );
 		$affiliates_woocommerce_is_active = in_array( 'affiliates-woocommerce/affiliates-woocommerce.php', $active_plugins );
 		if ( !$affiliates_is_active ) {
-			self::$admin_messages[] = "<div class='error'>" . __( 'The <strong>Affiliates WooCommerce Integration Light</strong> plugin requires an Affiliates plugin to be activated: <a href="http://www.itthinx.com/plugins/affiliates" target="_blank">Visit the Affiliates plugin page</a>', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) . "</div>";
+			self::$admin_messages[] = "<div class='error'>" . __( 'The <strong>Affiliates WooCommerce Integration Light</strong> plugin requires the <a href="http://wordpress.org/plugins/affiliates/">Affiliates</a> plugin.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) . "</div>";
 		}
 		if ( !$woocommerce_is_active ) {
-			self::$admin_messages[] = "<div class='error'>" . __( 'The <strong>Affiliates WooCommerce Integration Light</strong> plugin requires the <a href="http://wordpress.org/extend/plugins/woocommerce" target="_blank">WooCommerce</a> plugin to be activated.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) . "</div>";
+			self::$admin_messages[] = "<div class='error'>" . __( 'The <strong>Affiliates WooCommerce Integration Light</strong> plugin requires the <a href="http://wordpress.org/plugins/woocommerce/">WooCommerce</a> plugin to be activated.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) . "</div>";
 		}
 		if ( $affiliates_woocommerce_is_active ) {
 			self::$admin_messages[] = "<div class='error'>" . __( 'You do not need to use the <srtrong>Affiliates WooCommerce Integration Light</strong> plugin because you are already using the advanced Affiliates WooCommerce Integration plugin. Please deactivate the <strong>Affiliates WooCommerce Integration Light</strong> plugin now.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ) . "</div>";
@@ -175,7 +178,7 @@ class Affiliates_WooCommerce_Light_Integration {
 			'</div>';
 
 		$output .= '<p class="manage" style="padding:1em;margin-right:1em;font-weight:bold;font-size:1em;line-height:1.62em">';
-		$output .= __( 'You can support the development of the Affiliates plugin and get additional features with <a href="http://www.itthinx.com/plugins/affiliates-pro/" target="_blank">Affiliates Pro</a> and <a href="http://www.itthinx.com/plugins/affiliates-enterprise/" target="_blank">Affiliates Enterprise</a>.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN );
+		$output .= __( 'You can support the development of the Affiliates plugin and get additional features with <a href="http://www.itthinx.com/shop/affiliates-pro/" target="_blank">Affiliates Pro</a> and <a href="http://www.itthinx.com/shop/affiliates-enterprise/" target="_blank">Affiliates Enterprise</a>.', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN );
 		$output .= '</p>';
 
 		$output .= '<div class="manage" style="padding:2em;margin-right:1em;">';
@@ -276,14 +279,27 @@ class Affiliates_WooCommerce_Light_Integration {
 	 */
 	public static function woocommerce_checkout_order_processed( $order_id ) {
 
-		$order_total        = get_post_meta( $order_id, '_order_total', true );
-		$order_tax          = get_post_meta( $order_id, '_order_tax', true );
-		$order_shipping     = get_post_meta( $order_id, '_order_shipping', true );
-		$order_shipping_tax = get_post_meta( $order_id, '_order_shipping_tax', true );
-
-		$order_subtotal = $order_total - $order_tax - $order_shipping - $order_shipping_tax;
-
+		$order_subtotal = null;
 		$currency       = get_option( 'woocommerce_currency' );
+
+		if ( function_exists( 'wc_get_order' ) ) {
+			if ( $order = wc_get_order( $order_id ) ) {
+				if ( method_exists( $order, 'get_subtotal' ) ) {
+					$order_subtotal = $order->get_subtotal();
+				}
+				if ( method_exists( $order, 'get_order_currency' ) ) {
+					$currency = $order->get_order_currency();
+				}
+			}
+		}
+
+		if ( $order_subtotal === null ) {
+			$order_total        = get_post_meta( $order_id, '_order_total', true );
+			$order_tax          = get_post_meta( $order_id, '_order_tax', true );
+			$order_shipping     = get_post_meta( $order_id, '_order_shipping', true );
+			$order_shipping_tax = get_post_meta( $order_id, '_order_shipping_tax', true );
+			$order_subtotal     = $order_total - $order_tax - $order_shipping - $order_shipping_tax;
+		}
 
 		$order_link = '<a href="' . admin_url( 'post.php?post=' . $order_id . '&action=edit' ) . '">';
 		$order_link .= sprintf( __( 'Order #%s', AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN ), $order_id );

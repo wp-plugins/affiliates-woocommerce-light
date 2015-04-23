@@ -1,9 +1,9 @@
 === Affiliates WooCommerce Integration Light ===
 Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/affiliates-woocommerce-light
-Tags: ads, advertising, affiliate, affiliate marketing, affiliate plugin, affiliate tool, affiliates, bucks, contact form, crm, earn money, e-commerce, e-commerce, integration, lead, link, marketing, money, online sale, order, partner, referral, referral links, referrer, shopping cart, sales, shop, shopping cart, site, track, transaction, WooCommerce, wordpress
-Requires at least: 3.8
-Tested up to: 4.1
+Tags: ads, advertising, affiliate, affiliate marketing, affiliate plugin, affiliate tool, affiliates, bucks, contact form, crm, earn money, e-commerce, e-commerce, integration, lead, link, marketing, money, online sale, order, partner, referral, referral links, referrer, shopping cart, sales, shop, shopping cart, site, track, transaction, WooCommerce, WordPress
+Requires at least: 4.0
+Tested up to: 4.2
 Stable tag: 1.0.12
 License: GPLv3
 
@@ -11,11 +11,13 @@ This plugin integrates Affiliates with WooCommerce.
 
 == Description ==
 
-This plugin integrates [Affiliates](http://www.itthinx.com/plugins/affiliates/) with [WooCommerce](http://wordpress.org/plugins/woocommerce/).
+This plugin integrates [Affiliates](http://wordpress.org/plugins/affiliates/) with [WooCommerce](http://wordpress.org/plugins/woocommerce/).
 
 With this integration plugin, referrals are created automatically for your affiliates when sales are made.
 
 The plugin allows you to set a referral (commission) rate so that your affiliates get credited with a referral based on a percentage of each sale's total net amount.
+
+An advanced integration that synchronizes the referrals to their order status is available with [Affiliates Pro](http://www.itthinx.com/shop/affiliates-pro/) and [Affiliates Enterprise](http://www.itthinx.com/shop/affiliates-enterprise/).
 
 *Affiliates* is an outstanding platform that helps to boost sales through your affiliate program and is the ideal affiliate solution for *WooCommerce*.
 
@@ -65,6 +67,12 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 
 == Changelog ==
 
+= 1.1.0 =
+* Updated the referral calculation to use order methods.
+* Updated the plugin version info, tested for WordPress 4.2 and requires at least WordPress 4.0.
+* Fixed the path to WooCommerce on wordpress.org.
+* Updated the plugin info and added information on features and advanced versions.
+
 = 1.0.12 =
 * Added a setup hint button to set the commission rate.
 
@@ -109,42 +117,5 @@ See also: [Affiliates WooCommerce Light](http://www.itthinx.com/plugins/affiliat
 
 == Upgrade Notice ==
 
-= 1.0.12 =
-* Added a setup hint button to set the commission rate.
-
-= 1.0.11 =
-* WordPress 4.1 and WooCommerce 2.2.10 compatibility checked.
-
-= 1.0.10 =
-* WordPress 4.0 and WooCommerce 2.2.0 compatibility checked.
-
-= 1.0.9 =
-* Settings page reviewed.
-
-= 1.0.8 =
-* WordPress 3.9 compatibility checked.
-
-= 1.0.7 =
-* WordPress 3.8 compatibility checked.
-
-= 1.0.6 =
-* WordPress 3.6 compatible
-
-= 1.0.5 =
-* Fixed order links
-
-= 1.0.4 =
-* WordPress 3.5 compatible
-
-= 1.0.3 =
-* WordPress 3.4.1 compatible
-
-= 1.0.2 =
-* Fixed links to orders on _Visits & Referrals_ and _Affiliates & Referrals_ admin screens
-* Reduced admin page footprint + usage stats option 
-
-= 1.0.1 =
-* Must update if using WooCommerce >= 1.4 - referral amount calculation adjusted to missing subtotal
-
-= 1.0.0 =
-* Initial release.
+= 1.1.0 =
+* This release has been updated to use the appropriate order methods to obtain the order amount used to calculate the commission. It has been tested for WordPress 4.2 and the latest WooCommerce (including the current development version 2.4).
