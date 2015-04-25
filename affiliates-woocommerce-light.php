@@ -23,7 +23,7 @@
  * Description: Integrates Affiliates with WooCommerce
  * Author: itthinx
  * Author URI: http://www.itthinx.com/
- * Version: 1.1.0
+ * Version: 1.2.0
  */
 define( 'AFF_WOOCOMMERCE_LIGHT_PLUGIN_DOMAIN', 'affiliates-woocommerce-light' );
 
@@ -286,6 +286,12 @@ class Affiliates_WooCommerce_Light_Integration {
 			if ( $order = wc_get_order( $order_id ) ) {
 				if ( method_exists( $order, 'get_subtotal' ) ) {
 					$order_subtotal = $order->get_subtotal();
+				}
+				if ( method_exists( $order, 'get_total_discount' ) ) {
+					$order_subtotal -= $order->get_total_discount(); // excluding tax
+					if ( $order_subtotal < 0 ) {
+						$order_subtotal = 0;
+					}
 				}
 				if ( method_exists( $order, 'get_order_currency' ) ) {
 					$currency = $order->get_order_currency();
